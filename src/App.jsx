@@ -5,8 +5,11 @@ import Home from "./pages/Home";
 import Dashboard from "./pages/Dashboard";
 import Login from "./pages/Login";
 import NotFound from "./pages/NotFound";
+import MapView from "./components/MapView";
 
 function App() {
+
+  
   return (
     <>
       <Router>
@@ -15,6 +18,7 @@ function App() {
             <Route path="/" element={<Home />}></Route>
             <Route path="/login" element={<Login />}></Route>
             <Route path="/dashboard" element={<Dashboard />}></Route>
+            <Route path="/mapview" element={<MapView/>}></Route>
             <Route path="*" element={<NotFound />}></Route>
           </Route>
         </Routes>

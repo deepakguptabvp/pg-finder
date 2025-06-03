@@ -1,9 +1,32 @@
 import { MapPinIcon, SearchIcon } from "lucide-react";
-import  { useState } from "react";
+import { useEffect, useState } from "react";
 
-const HeroSection = () => {
-  const [location, setLocation] = useState("");
-  const roomOptions = ["Near Metro", "Female Only", "Male Only", "AC Rooms", "Wifi", "Included Food", "Non AC", "Laundry","Power Backup", "Kitchen"]
+const HeroSection = ({ onSearch }) => {
+  const [inputValue, setInputValue] = useState("");
+
+  useEffect(() => {
+    if (inputValue.trim() === "") {
+      onSearch(""); //reset search
+    }
+  }, [inputValue]);
+
+  const handleSearchClick = () => {
+    onSearch(inputValue);
+    // setInputValue("");
+  };
+
+  const roomOptions = [
+    "Near Metro",
+    "Female Only",
+    "Male Only",
+    "AC Rooms",
+    "Wifi",
+    "Included Food",
+    "Non AC",
+    "Laundry",
+    "Power Backup",
+    "Kitchen",
+  ];
 
   return (
     <div className="relative bg-indigo-700 text-white">
@@ -27,26 +50,32 @@ const HeroSection = () => {
                 <input
                   type="text"
                   placeholder="Enter location"
+                  value={inputValue}
+                  onChange={(e) => setInputValue(e.target.value)}
                   className="ml-2 grow focus:outline-none bg-transparent text-gray-700"
-                  value={location}
-                  onChange={(e) => setLocation(e.target.value)}
                 />
               </div>
             </div>
-            <button className="bg-indigo-600 hover:bg-indigo-700 rounded-xl px-6 py-2 transition flex items-center justify-center">
+            <button
+              className="bg-indigo-600 hover:bg-indigo-700 rounded-xl px-6 py-2 transition flex items-center justify-center cursor-pointer"
+              onClick={handleSearchClick}
+            >
               <SearchIcon className="h-5 w-5  mr-2" />
               <span>Search</span>
             </button>
           </div>
 
-        {/* Room Filter Options */}
-        <div className="flex flex-wrap gap-3 mt-4">
-            {roomOptions.map((items,index)=>(
-                <button key={index} className="bg-gray-200 text-gray-800 hover:bg-gray-300 text-sm px-3 py-2 rounded-full transition cursor-pointer">
-                    {items}
-                </button>
+          {/* Room Filter Options */}
+          <div className="flex flex-wrap gap-3 mt-4">
+            {roomOptions.map((items, index) => (
+              <button
+                key={index}
+                className="bg-gray-200 text-gray-800 hover:bg-gray-300 text-sm px-3 py-2 rounded-full transition cursor-pointer"
+              >
+                {items}
+              </button>
             ))}
-        </div>
+          </div>
         </div>
       </div>
     </div>
