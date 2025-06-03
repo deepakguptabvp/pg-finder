@@ -1,6 +1,7 @@
 import { Outlet } from "react-router";
 import Sidebar from "../components/Sidebar";
 import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 const MainLayout = () => {
   return (
@@ -13,11 +14,11 @@ const MainLayout = () => {
       {/* Main Content */}
       <div>
         <Header />
-
         {/* Child routes will be rendered here */}
         <main>
           <Outlet />
         </main>
+        <Footer />
       </div>
     </div>
   );

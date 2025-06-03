@@ -39,7 +39,7 @@ const Header = () => {
           <div
             className={`${
               isMenuOpen ? "block" : "hidden"
-            } absolute top-16 left-0 w-full bg-white md:static md:block md:w-auto`}
+            } absolute top-13 left-0 w-full bg-white md:static md:block md:w-auto`}
           >
             <div className="flex flex-col md:flex-row md:items-center gap-3 md:gap-6 p-4 md:p-0 text-md font-medium">
               <Link
