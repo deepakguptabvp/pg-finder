@@ -8,7 +8,7 @@ const pgData = [
     imageUrl:
       "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=2070&q=80",
     type: "Female",
-    amenities: ["Wifi", "Furnished", "Attached Bathroom"],
+    amenities: ["Wifi", "Furnished", "AC","Attached Bathroom"],
   },
   {
     id: "2",
@@ -19,7 +19,7 @@ const pgData = [
     imageUrl:
       "https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&fit=crop&w=2070&q=80",
     type: "Male",
-    amenities: ["Wifi", "Food Included", "Power Backup"],
+    amenities: ["Wifi", "Food Included", "AC", "Power Backup", "Television"],
   },
   {
     id: "3",
@@ -30,7 +30,7 @@ const pgData = [
     imageUrl:
       "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=2070&q=80",
     type: "Co-ed",
-    amenities: ["AC", "Furnished", "Gym"],
+    amenities: ["AC", "Furnished", "Gym", "Power Backup", "Parking"],
   },
   {
     id: "4",
@@ -41,7 +41,7 @@ const pgData = [
     imageUrl:
       "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=2070&q=80",
     type: "Female",
-    amenities: ["Laundry", "Wifi", "Food Included"],
+    amenities: ["Laundry", "Wifi", "Food Included","Private Room", "Furnished"],
   },
   {
     id: "5",
