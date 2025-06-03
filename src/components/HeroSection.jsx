@@ -4,15 +4,15 @@ import { useEffect, useState } from "react";
 const HeroSection = ({ onSearch }) => {
   const [inputValue, setInputValue] = useState("");
 
+    //  Run on every change in input
   useEffect(() => {
     if (inputValue.trim() === "") {
-      onSearch(""); //reset search
+      onSearch(""); // reset search if input is empty
     }
   }, [inputValue]);
 
   const handleSearchClick = () => {
     onSearch(inputValue);
-    // setInputValue("");
   };
 
   const roomOptions = [

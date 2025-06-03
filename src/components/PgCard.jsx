@@ -19,6 +19,8 @@ import {
   LockIcon,
 } from "lucide-react";
 
+import { motion } from "framer-motion";
+
 const PgCard = ({
   name,
   location,
@@ -48,7 +50,13 @@ const PgCard = ({
   };
 
   return (
-    <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-2">
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5 }}
+      className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-2"
+    >
       {/* Image and Type  */}
       <div className="relative h-48">
         <img src={imageUrl} alt={name} className="w-full object-cover h-full" />
@@ -73,34 +81,37 @@ const PgCard = ({
           <span className="text-sm">{location}</span>
         </div>
 
-        {/* Amenities */}
+        {/* Amenities  with framer motion works on refresh page*/}
         <div className="mt-4 flex flex-wrap gap-2">
           {amenities.map((amenity, index) => {
             const Icon = amenityIcons[amenity];
             return (
-              <span
+              <motion.span
                 key={index}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3, delay: index * 0.05 }}
                 className="bg-gray-100 text-gray-700 text-xs py-1 px-2 rounded-full flex items-center gap-1"
               >
                 {Icon && <Icon className="inline h-3 w-3" />}
                 {amenity}
-              </span>
+              </motion.span>
             );
           })}
         </div>
 
         {/* Rent/month & view details */}
         <div className="mt-5 flex justify-between items-center">
-            <div>
-                <span className="text-lg text-indigo-600 font-bold">  ₹{price}</span>
-                <span className="text-sm text-gray-500">  /month</span>
-            </div>
-            <button className="bg-indigo-600 hover:bg-indigo-700 text-white py-1.5 px-4 rounded text-sm transition">
-                View Details
-            </button>
+          <div>
+            <span className="text-lg text-indigo-600 font-bold"> ₹{price}</span>
+            <span className="text-sm text-gray-500"> /month</span>
+          </div>
+          <button className="bg-indigo-600 hover:bg-indigo-700 text-white py-1.5 px-4 rounded text-sm transition">
+            View Details
+          </button>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
