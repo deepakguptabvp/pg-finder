@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import toast, { ToastBar } from "react-hot-toast";
 
 const Login = () => {
   const [phoneNo, setPhoneNo] = useState("");
@@ -48,9 +49,12 @@ const Login = () => {
             />
           </div>
 
-          <button className="bg-indigo-600 hover:bg-indigo-700 py-2 mt-3 rounded-full dark:text-white cursor-pointer">
+          <button className="bg-indigo-600 hover:bg-indigo-700 py-2 mt-3 rounded-full dark:text-white cursor-pointer"
+          onClick={()=>toast.loading(" Otp sent")}
+          >
             Request Otp
           </button>
+          
         </div>
       </div>
     </div>

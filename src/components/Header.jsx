@@ -1,19 +1,13 @@
-import { MenuIcon, XIcon, HomeIcon, UserIcon, User2Icon } from "lucide-react";
+import { MenuIcon, XIcon, HomeIcon, UserIcon } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router";
 
 const Header = () => {
-  // let navigate = useNavigate();
-
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMobileMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
-
-  // const handleLogin = () => {
-  //   navigate("/login");
-  // };
 
   return (
     <nav className="shadow-md sticky top-0 z-10 bg-white md:h-20 lg:h-16 h-13 p-1.5">
@@ -49,25 +43,29 @@ const Header = () => {
           >
             <div className="flex flex-col md:flex-row md:items-center gap-3 md:gap-6 p-4 md:p-0 text-md font-medium">
               <Link
-                to="/home"
+                to="/"
+                onClick={() => isMenuOpen && toggleMobileMenu()}
                 className="text-gray-700 hover:text-indigo-600 px-3 py-2"
               >
                 Home
               </Link>
               <Link
                 to="/explore"
+                onClick={() => isMenuOpen && toggleMobileMenu()}
                 className="text-gray-700 hover:text-indigo-600 px-3 py-2"
               >
                 Explore
               </Link>
               <Link
                 to="/about"
+                onClick={() => isMenuOpen && toggleMobileMenu()}
                 className="text-gray-700 hover:text-indigo-600 px-3 py-2"
               >
                 About
               </Link>
               <Link
                 to="/contact"
+                onClick={() => isMenuOpen && toggleMobileMenu()}
                 className="text-gray-700 hover:text-indigo-600 px-3 py-2"
               >
                 Contact
@@ -75,6 +73,7 @@ const Header = () => {
 
               <Link
                 to="/login"
+                onClick={() => isMenuOpen && toggleMobileMenu()}
                 className="w-full mt-2  bg-indigo-600 text-white px-4 py-2  rounded-md transition hover:bg-indigo-700 cursor-pointer"
               >
                 <div className="flex justify-center items-center">

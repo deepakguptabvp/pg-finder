@@ -1,7 +1,8 @@
 import { Outlet } from "react-router";
-import Sidebar from "../components/Sidebar";
+// import Sidebar from "../components/Sidebar";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import { Toaster } from "react-hot-toast";
 
 const MainLayout = () => {
   return (
@@ -16,6 +17,7 @@ const MainLayout = () => {
         <Header />
         {/* Child routes will be rendered here */}
         <main>
+          <Toaster position="top-center" reverseOrder={false} />
           <Outlet />
         </main>
         <Footer />
