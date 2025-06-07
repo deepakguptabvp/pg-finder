@@ -7,9 +7,9 @@ const MainLayout = () => {
   return (
     <div className="flex min-h-screen bg-gray-100">
       {/* Sidebar */}
-      <aside className="w-64 bg-white shadow-md hidden md:block">
+      {/* <aside className="w-64 bg-white shadow-md hidden md:block">
         <Sidebar />
-      </aside>
+      </aside> */}
 
       {/* Main Content */}
       <div>

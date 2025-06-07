@@ -6,9 +6,10 @@ import Dashboard from "./pages/Dashboard";
 import Login from "./pages/Login";
 import NotFound from "./pages/NotFound";
 import MapView from "./components/MapView";
+import { useState } from "react";
 
 function App() {
-
+const [user, setUser] = useState(null);
   
   return (
     <>
@@ -16,7 +17,7 @@ function App() {
         <Routes>
           <Route path="/" element={<MainLayout />}>
             <Route path="/" element={<Home />}></Route>
-            <Route path="/login" element={<Login />}></Route>
+            <Route path="/login" element={<Login setUser={setUser} />}></Route>
             <Route path="/dashboard" element={<Dashboard />}></Route>
             <Route path="/mapview" element={<MapView/>}></Route>
             <Route path="*" element={<NotFound />}></Route>

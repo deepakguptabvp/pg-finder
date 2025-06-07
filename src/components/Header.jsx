@@ -3,23 +3,29 @@ import { useState } from "react";
 import { Link } from "react-router";
 
 const Header = () => {
+  // let navigate = useNavigate();
+
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMobileMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  // const handleLogin = () => {
+  //   navigate("/login");
+  // };
+
   return (
     <nav className="shadow-md sticky top-0 z-10 bg-white md:h-20 lg:h-16 h-13 p-1.5">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center ">
           {/* Logo Section */}
-          <div className="flex items-center">
+          <Link to="/" className="flex items-center">
             <HomeIcon className="h-8 w-8 text-indigo-600" />
             <span className="ml-2 text-xl font-bold text-indigo-600">
               PG Finder
             </span>
-          </div>
+          </Link>
 
           {/* Toggle Button for Mobile */}
           <div className="md:hidden">
@@ -67,12 +73,15 @@ const Header = () => {
                 Contact
               </Link>
 
-              <button className="w-full mt-2  bg-indigo-600 text-white px-4 py-2  rounded-md transition hover:bg-indigo-700">
+              <Link
+                to="/login"
+                className="w-full mt-2  bg-indigo-600 text-white px-4 py-2  rounded-md transition hover:bg-indigo-700 cursor-pointer"
+              >
                 <div className="flex justify-center items-center">
                   <UserIcon className="h-6 w-6 mr-2" />
                   <span>Sign In</span>
                 </div>
-              </button>
+              </Link>
             </div>
           </div>
         </div>
