@@ -20,7 +20,7 @@ const Login = () => {
       <div className="w-full md:w-2/5 flex flex-col items-center justify-center bg-white">
         <img
           src="/pg-1.png"
-          alt="login"
+          alt="login logo"
           className="h-30 w-full object-contain rounded-2xl mb-3"
         />
         <h1 className="text-4xl md:text-3xl mb-1 font-bold mt- text-center">
