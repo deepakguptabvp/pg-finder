@@ -1,18 +1,68 @@
-import React, { useState } from "react";
-import toast, { ToastBar } from "react-hot-toast";
+import { useState } from "react";
+import toast from "react-hot-toast";
+import { useNavigate } from "react-router";
 
 const Login = () => {
   const [phoneNo, setPhoneNo] = useState("");
-  const [otpSent, setOtpSent] = useState("");
+  const [otp, setOtp] = useState("");
+  const [otpSent, setOtpSent] = useState(false);
+  const [generatedOtp, setGeneratedOtp] = useState("");
+  const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
+
+  // Helper to generate a 6-digit OTP
+  const generateOtp = () =>
+    Math.floor(100000 + Math.random() * 900000).toString();
+
+  const handleOtpSent = async () => {
+    if (!phoneNo || phoneNo.length !== 10) {
+      toast.error("Please enter a valid 10-digit phone number.");
+      return;
+    }
+    setLoading(true);
+    try {
+      const otp = generateOtp();
+      setGeneratedOtp(otp);
+      setOtpSent(true);
+      setTimeout(() => {
+        toast.success(`Otp sent successfully. OTP: ${otp}`, {
+          duration: 5000,
+        });
+      }, 3000);
+    } catch (err) {
+      toast.error("Something went wrong while sending OTP");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleVerifyOtp = async () => {
+    if (!otp) {
+      return toast.error("Please enter the otp.");
+    }
+    setLoading(true);
+    try {
+      if (otp === generatedOtp) {
+        toast.success("Login Successfully.");
+        navigate("/allListings");
+      } else {
+        toast.error("Invalid OTP.");
+      }
+    } catch (err) {
+      toast.error("Something went wrong while verifying OTP");
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <div className="flex flex-col md:flex-row items-center justify-center bg-white">
       {/* image div */}
-      <div className="w-full md:w-3/5 flex items-center justify-center">
+      <div className="w-full md:w-3/5 flex items-center justify-center ">
         <img
-          src="/pg-login.jpg"
+          src="/loginPG.png"
           alt="Image"
-          className="object-cover w-full h-full"
+          className="object-cover h-80 md:h-155 "
         />
       </div>
 
@@ -39,22 +89,48 @@ const Login = () => {
             <input
               type="tel"
               value={phoneNo}
+              pattern="[0-9]{10}"
               maxLength={10}
               onChange={(e) => {
                 const digitsOnly = e.target.value.replace(/\D/g, "");
                 setPhoneNo(digitsOnly);
               }}
               placeholder="Enter mobile number"
-              className="pl-14 pr-4 py-2 w-full rounded-full border-2 border-indigo-500 focus:outline-none focus:border-indigo-700"
+              className="pl-16 pr-4 py-2 w-full rounded-full border-2 border-indigo-500 focus:outline-none focus:border-indigo-700"
             />
           </div>
 
-          <button className="bg-indigo-600 hover:bg-indigo-700 py-2 mt-3 rounded-full text-white cursor-pointer"
-          onClick={()=>toast.loading(" Otp sent")}
-          >
-            Request Otp
-          </button>
-          
+          {otpSent ? (
+            <>
+              <input
+                type="tel"
+                value={otp}
+                placeholder="Enter OTP"
+                onChange={(e) => {
+                  setOtp(e.target.value);
+                }}
+                className="pl-5 pr-4 py-2 w-full rounded-full border-2 border-indigo-500 focus:outline-none focus:border-indigo-700"
+              />
+
+              <button
+                type="button"
+                disabled={loading}
+                onClick={handleVerifyOtp}
+                className="bg-indigo-600 hover:bg-indigo-700 py-2 mt-3 rounded-full text-white cursor-pointer"
+              >
+                {loading ? "Verifying OTP ..." : "Verify OTP"}
+              </button>
+            </>
+          ) : (
+            <button
+              type="button"
+              disabled={loading}
+              onClick={handleOtpSent}
+              className="bg-indigo-600 hover:bg-indigo-700 py-2 mt-3 rounded-full text-white cursor-pointer"
+            >
+              {loading ? "Sending ..." : "Request OTP"}
+            </button>
+          )}
         </div>
       </div>
     </div>

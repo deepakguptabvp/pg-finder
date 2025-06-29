@@ -30,6 +30,7 @@ const PgCard = ({
   type,
   amenities,
 }) => {
+  
   const amenityIcons = {
     Wifi: WifiIcon,
     "Attached Bathroom": ShowerHeadIcon,
@@ -65,8 +66,8 @@ const PgCard = ({
         </div>
       </div>
 
-      {/* Name and rating */}
       <div className="p-5">
+        {/* Name and rating */}
         <div className="flex justify-between items-start">
           <h3 className="text-lg font-semibold  text-gray-800">{name}</h3>
           <div className="flex items-center bg-green-50 px-2 py-1 rounded">

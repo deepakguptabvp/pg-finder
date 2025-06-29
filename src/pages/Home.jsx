@@ -8,7 +8,7 @@ import pgData from "../assets/pgData";
 const Home = () => {
   const [searchByLocation, setSearchByLocation] = useState("");
 
-  // Filter Pg based on location
+  // Filter Pg's based on location
   const filteredPGs = pgData.filter((pg) =>
     pg.location.toLowerCase().includes(searchByLocation.toLowerCase())
   );

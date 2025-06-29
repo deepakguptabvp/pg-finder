@@ -13,7 +13,11 @@ const HowItWorks = () => {
             three-step process
           </p>
         </div>
-        <div className="mt-16 grid gap-8 grid-cols-1 md:grid-cols-3">
+
+
+          {/* Search - Visit - Connect */}
+        <div className="mt-16 grid gap-8 grid-cols-1 md:grid-cols-3 ">
+
           <div className="text-center">
             <div className="mx-auto h-16 w-16 rounded-full bg-indigo-100 flex items-center justify-center">
               <SearchIcon className="h-8 w-8 text-indigo-600" />
