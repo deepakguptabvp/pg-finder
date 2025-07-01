@@ -1,6 +1,11 @@
+import { useNavigate } from "react-router";
 import PgCard from "./PgCard";
 
-const FeaturedListing = ({ listings }) => {
+const FeaturedListing = ({ listings = [] }) => {
+  const navigate = useNavigate();
+
+  const featuredListings = listings.slice(0, 12);
+
   return (
     <section className="py-16 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -14,14 +19,20 @@ const FeaturedListing = ({ listings }) => {
           </p>
         </div>
         <div className="mt-12 grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
-          {listings.length === 0 ? (
+          {featuredListings.length === 0 ? (
             <p>No PGs found for this location.</p>
           ) : (
-            listings.map((pg) => <PgCard key={pg.id} {...pg} />)
+            featuredListings.map((pg) => <PgCard key={pg.id} {...pg} />)
           )}
         </div>
         <div className="mt-12 text-center">
-          <button className="bg-indigo-600 hover:bg-indigo-700 text-white py-2 px-6 rounded-md transition">
+          <button
+            onClick={() => {
+              navigate("/alllistings");
+              window.scrollTo(0, 0);
+            }}
+            className="bg-indigo-600 hover:bg-indigo-700 text-white py-2 px-6 rounded-md transition cursor-pointer"
+          >
             View All Listings
           </button>
         </div>

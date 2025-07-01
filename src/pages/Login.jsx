@@ -1,6 +1,7 @@
 import { useState } from "react";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router";
+import { Link } from "react-router";
 
 const Login = () => {
   const [phoneNo, setPhoneNo] = useState("");
@@ -14,6 +15,7 @@ const Login = () => {
   const generateOtp = () =>
     Math.floor(100000 + Math.random() * 900000).toString();
 
+  // function to handle Otp Sent
   const handleOtpSent = async () => {
     if (!phoneNo || phoneNo.length !== 10) {
       toast.error("Please enter a valid 10-digit phone number.");
@@ -36,6 +38,7 @@ const Login = () => {
     }
   };
 
+  // function to handle Verify OTP
   const handleVerifyOtp = async () => {
     if (!otp) {
       return toast.error("Please enter the otp.");
@@ -55,6 +58,11 @@ const Login = () => {
     }
   };
 
+  // function to handle Resend OTP
+  const handleResendOtp = () => {
+    handleOtpSent();
+  };
+
   return (
     <div className="flex flex-col md:flex-row items-center justify-center bg-white">
       {/* image div */}
@@ -62,26 +70,26 @@ const Login = () => {
         <img
           src="/loginPG.png"
           alt="Image"
-          className="object-cover h-80 md:h-155 "
+          className="object-cover h-80 md:h-155"
         />
       </div>
 
       {/* login div */}
-      <div className="w-full md:w-2/5 flex flex-col items-center justify-center bg-white">
+      <div className="w-full md:w-2/5 flex flex-col items-center justify-center bg-white px-6">
         <img
           src="/pg-1.png"
           alt="login logo"
           className="h-30 w-full object-contain rounded-2xl mb-3"
         />
-        <h1 className="text-4xl md:text-3xl mb-1 font-bold mt- text-center">
+        <h1 className="text-4xl md:text-3xl mb-2 font-bold text-center">
           Welcome to Pg Finder.com
         </h1>
-        <span className="text-lg font-semibold  ">
+        <span className="text-gray-500 text-md font-semibold">
           Find your next stay with us !
         </span>
 
         {/* Otp login */}
-        <div className="flex flex-col space-y-3 my-10 ">
+        <div className="flex flex-col space-y-3 my-10">
           <div className="relative w-full max-w-sm">
             <span className="absolute left-0 h-full bg-indigo-600 text-white px-3 flex items-center rounded-l-full text-md">
               +91
@@ -113,23 +121,42 @@ const Login = () => {
               />
 
               <button
+                className="hover:underline cursor-pointer"
+                onClick={handleResendOtp}
+              >
+                Resend OTP
+              </button>
+
+              <button
                 type="button"
                 disabled={loading}
                 onClick={handleVerifyOtp}
-                className="bg-indigo-600 hover:bg-indigo-700 py-2 mt-3 rounded-full text-white cursor-pointer"
+                className="py-2 mt-3 rounded-full text-white font-serif bg-indigo-600 hover:bg-indigo-700 cursor-pointer"
               >
                 {loading ? "Verifying OTP ..." : "Verify OTP"}
               </button>
             </>
           ) : (
-            <button
-              type="button"
-              disabled={loading}
-              onClick={handleOtpSent}
-              className="bg-indigo-600 hover:bg-indigo-700 py-2 mt-3 rounded-full text-white cursor-pointer"
-            >
-              {loading ? "Sending ..." : "Request OTP"}
-            </button>
+            <>
+              <button
+                type="button"
+                disabled={loading}
+                onClick={handleOtpSent}
+                className="py-2 mt-3 rounded-full text-white font-serif bg-indigo-600 hover:bg-indigo-700  cursor-pointer"
+              >
+                {loading ? "Sending ..." : "Request OTP"}
+              </button>
+
+              {/* Sign up link*/}
+              <div>
+                Don't have an account.{" "}
+                <Link to="/signup">
+                  <strong className="text-indigo-600 cursor-pointer hover:underline">
+                    Create an account
+                  </strong>
+                </Link>
+              </div>
+            </>
           )}
         </div>
       </div>

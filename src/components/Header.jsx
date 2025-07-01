@@ -10,13 +10,18 @@ const Header = () => {
   };
 
   return (
-    <nav className="shadow-md sticky top-0 z-10 bg-white md:h-20 lg:h-16 h-13 p-1.5">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center ">
+    <nav className="shadow-md sticky top-0 z-10 bg-white md:h-20 lg:h-20 h-13 p-1.5 flex items-center">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        <div className="flex justify-between items-center my-auto">
           {/* Logo Section */}
           <Link to="/" className="flex items-center">
-            <HomeIcon className="h-8 w-8 text-indigo-600" />
-            <span className="ml-2 text-xl font-bold text-indigo-600">
+            <img
+              src="/pg-1.png"
+              alt="Company Logo"
+              className="h-10 w-10  -mt-2"
+            />
+
+            <span className="ml-3 md:text-2xl font-bold text-gray-700 ">
               PG Finder
             </span>
           </Link>
@@ -45,28 +50,28 @@ const Header = () => {
               <Link
                 to="/"
                 onClick={() => isMenuOpen && toggleMobileMenu()}
-                className="text-gray-700 hover:text-indigo-600 px-3 py-2"
+                className="text-gray-700  hover:underline px-3 py-2"
               >
                 Home
               </Link>
               <Link
-                to="/explore"
+                to="/alllistings"
                 onClick={() => isMenuOpen && toggleMobileMenu()}
-                className="text-gray-700 hover:text-indigo-600 px-3 py-2"
+                className="text-gray-700  hover:underline px-3 py-2"
               >
                 Explore
               </Link>
               <Link
                 to="/about"
                 onClick={() => isMenuOpen && toggleMobileMenu()}
-                className="text-gray-700 hover:text-indigo-600 px-3 py-2"
+                className="text-gray-700  hover:underline px-3 py-2"
               >
                 About
               </Link>
               <Link
                 to="/contact"
                 onClick={() => isMenuOpen && toggleMobileMenu()}
-                className="text-gray-700 hover:text-indigo-600 px-3 py-2"
+                className="text-gray-700  hover:underline px-3 py-2"
               >
                 Contact
               </Link>
@@ -74,7 +79,7 @@ const Header = () => {
               <Link
                 to="/login"
                 onClick={() => isMenuOpen && toggleMobileMenu()}
-                className="w-full mt-2  bg-indigo-600 text-white px-4 py-2  rounded-md transition hover:bg-indigo-700 cursor-pointer"
+                className="w-full  bg-indigo-600 text-white px-4 py-2  rounded-md transition hover:bg-indigo-700 cursor-pointer"
               >
                 <div className="flex justify-center items-center">
                   <UserIcon className="h-6 w-6 mr-2" />
