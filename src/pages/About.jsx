@@ -12,7 +12,7 @@ const About = () => {
       <div className="grid md:grid-cols-2 gap-8 mb-10">
         <div>
           <h2 className="text-2xl font-semibold mb-2 text-indigo-600">Why PG Finder?</h2>
-          <ul className="list-decimal  ml-5 space-y-2 text-gray-700">
+          <ul className="list-decimal ml-5 space-y-2 text-gray-700">
             <li>Verified PG Listings with detailed info</li>
             <li>Map-based Search to find nearby options</li>
             <li>Filter by rent, gender, amenities, and more</li>
@@ -30,7 +30,7 @@ const About = () => {
       </div>
 
       <div className="bg-indigo-50 border border-indigo-100 p-6 rounded-xl shadow-md">
-        <h3 className="text-xl font-medium mb-2 text-indigo-700">Made with ❤️ by Deepak Gupta</h3>
+        <h3 className="text-xl font-medium mb-2 text-indigo-700">Made with ❤️🏠 by Deepak Gupta</h3>
         <p className="text-gray-700">
           This project is part of a personal mission to solve real-life problems using modern frontend technologies like React, TailwindCSS, and Google Maps API. It’s designed to be scalable, clean, and practical.
         </p>

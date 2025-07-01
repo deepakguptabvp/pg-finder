@@ -20,7 +20,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="max-w-4xl mx-auto px-4 py-10 text-gray-800">
+    <div className="max-w-2xl mx-auto px-4 py-10 text-gray-800">
       <h1 className="text-4xl text-indigo-600 font-bold mb-6">Contact Us</h1>
       <p className="mb-8 text-gray-700 text-md md:text-lg">
         Have questions, suggestions, or need help? Fill out the form below and
@@ -41,7 +41,7 @@ const Contact = () => {
             onChange={handleChange}
             placeholder="Your name"
             required
-            className="w-full border px-4 py-2 border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            className="w-full border px-4 py-2 border-gray-400 rounded-xl focus:outline-none focus:ring-1 focus:ring-indigo-700"
           />
         </div>
 
@@ -59,7 +59,7 @@ const Contact = () => {
             onChange={handleChange}
             placeholder="your@gmail.com"
             required
-            className="w-full border px-4 py-2 border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            className="w-full border px-4 py-2 border-gray-400 rounded-xl focus:outline-none focus:ring-1 focus:ring-indigo-700"
           />
         </div>
 
@@ -77,7 +77,7 @@ const Contact = () => {
             value={formData.message}
             onChange={handleChange}
             required
-            className="w-full border px-4 py-2 border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            className="w-full border px-4 py-2 border-gray-400 rounded-xl focus:outline-none focus:ring-1 focus:ring-indigo-700"
           />
         </div>
 

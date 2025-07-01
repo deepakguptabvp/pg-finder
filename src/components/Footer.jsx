@@ -30,13 +30,22 @@ const Footer = () => {
               >
                 <FacebookIcon className="h-5 w-5" />
               </Link>
-              <Link href="#" className="text-gray-400 hover:text-white  transition cursor-pointer  hover:underline">
+              <Link
+                href="#"
+                className="text-gray-400 hover:text-white  transition cursor-pointer  hover:underline"
+              >
                 <TwitterIcon className="h-5 w-5" />
               </Link>
-              <Link href="#" className="text-gray-400 hover:text-white  transition cursor-pointer  hover:underline">
+              <Link
+                href="#"
+                className="text-gray-400 hover:text-white  transition cursor-pointer  hover:underline"
+              >
                 <InstagramIcon className="h-5 w-5" />
               </Link>
-              <Link href="#" className="text-gray-400 hover:text-white  transition cursor-pointer  hover:underline">
+              <Link
+                href="#"
+                className="text-gray-400 hover:text-white  transition cursor-pointer  hover:underline"
+              >
                 <LinkedinIcon className="h-5 w-5" />
               </Link>
             </div>
@@ -46,7 +55,7 @@ const Footer = () => {
             <ul className="space-y-2">
               <li>
                 <Link
-                  href="#"
+                  to="/"
                   className="text-gray-400 hover:text-white  transition cursor-pointer  hover:underline"
                 >
                   Home
@@ -54,7 +63,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  href="#"
+                  to="/about"
                   className="text-gray-400 hover:text-white  transition cursor-pointer  hover:underline"
                 >
                   About Us
@@ -62,7 +71,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  href="#"
+                  to="/alllistings"
                   className="text-gray-400 hover:text-white  transition cursor-pointer  hover:underline"
                 >
                   Featured PGs
@@ -78,7 +87,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  href="#"
+                  to="/contact"
                   className="text-gray-400 hover:text-white  transition cursor-pointer  hover:underline"
                 >
                   Contact Us
@@ -102,7 +111,7 @@ const Footer = () => {
                   href="#"
                   className="text-gray-400 hover:text-white  transition cursor-pointer  hover:underline"
                 >
-                 Noida
+                  Noida
                 </Link>
               </li>
               <li>
@@ -134,8 +143,8 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
             <address className="not-italic text-gray-300 text-sm">
-              <p>123 Main Street</p>
-              <p>Bangalore, Karnataka 560001</p>
+              <p>Sector-62</p>
+              <p>Noida, U.P. 201309</p>
               <p className="mt-3">Email: info@pgfinder.com</p>
               <p>Phone: +91 9876543210</p>
             </address>

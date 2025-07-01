@@ -1,6 +1,13 @@
+"use client";
 import { Link } from "lucide-react";
+import { useState } from "react";
 
 const Signup = () => {
+  const [fullName, setFullName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [city, setCity] = useState("");
+
   return (
     <div className="flex flex-col md:flex-row items-center justify-center bg-white md:px-10">
       {/* Details component */}
@@ -16,7 +23,7 @@ const Signup = () => {
         </div>
 
         {/* Google login button */}
-        <button className="flex border border-gray-600 rounded-xl px-4 py-2 cursor-pointer hover:border-emerald-600 shadow-xl">
+        <button className="flex border border-gray-600 rounded-xl px-4 py-2 cursor-pointer hover:border-emerald-600 hover:shadow-xl">
           <img src="./google-icon.png" alt="Google Icon" className="h-6 mr-2" />
           Login with Google
         </button>
@@ -24,35 +31,57 @@ const Signup = () => {
         {/* User Details */}
         <div className="flex flex-col text-left space-y-2 px-8 py-4">
           <div>
-            <label htmlFor="">Full Name</label>
+            <label
+              htmlFor="fullName"
+              className="block mb-1 font-medium text-gray-700"
+            >
+              Full Name
+            </label>
             <input
               type="text"
               placeholder="Enter your full name"
-              className="w-full md:w-80 rounded-xl px-4 py-2 border border-gray-400 focus:outline-none focus:border-indigo-700"
+              className="w-full md:w-80 rounded-xl px-4 py-2 border border-gray-400 focus:ring-1 focus:outline-none focus:ring-indigo-700"
             />
           </div>
           <div>
-            <label htmlFor="Email">Email</label>
+            <label
+              htmlFor="email"
+              className="block mb-1 font-medium text-gray-700"
+            >
+              Email
+            </label>
             <input
               type="email"
               placeholder="Enter your email"
-              className="w-full md:w-80 rounded-xl px-4 py-2 border border-gray-400 focus:outline-none focus:border-indigo-700"
+              className="w-full md:w-80 rounded-xl px-4 py-2 border border-gray-400 focus:ring-1 focus:outline-none focus:ring-indigo-700"
             />
           </div>
           <div>
-            <label htmlFor="">Phone No</label>
+            <label
+              htmlFor="phoneNumber"
+              className="block mb-1 font-medium text-gray-700"
+            >
+              Phone No
+            </label>
             <input
               type="tel"
+              maxLength={10}
+              pattern="[0-9]{10}"
               placeholder="Enter your number"
-              className="w-full md:w-80 rounded-xl px-4 py-2 border border-gray-400 focus:outline-none focus:border-indigo-700"
+              className="w-full md:w-80 rounded-xl px-4 py-2 border border-gray-400 focus:ring-1 focus:outline-none focus:ring-indigo-700"
             />
           </div>
           <div>
-            <label htmlFor="">City</label>
+            <label
+              htmlFor="city"
+              className="block mb-1 font-medium text-gray-700"
+            >
+              City
+            </label>
             <input
               type="text"
               placeholder="Enter your city"
-              className="w-full md:w-80 rounded-xl px-4 py-2 border border-gray-400 focus:outline-none focus:border-indigo-700"
+              className="w-full md:w-80 rounded-xl px-4 py-2 border border-gray-400 focus:ring-1 focus:outline-none focus:ring-indigo-700"
             />
           </div>
           <button
