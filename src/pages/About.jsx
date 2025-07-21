@@ -30,7 +30,7 @@ const About = () => {
       </div>
 
       <div className="bg-indigo-50 border border-indigo-100 p-6 rounded-xl shadow-md">
-        <h3 className="text-xl font-medium mb-2 text-indigo-700">Made with ❤️🏠 by Deepak Gupta</h3>
+        <h3 className="text-xl font-medium mb-2 text-indigo-700">Developed with precision 👨‍💻 by Deepak Gupta</h3>
         <p className="text-gray-700">
           This project is part of a personal mission to solve real-life problems using modern frontend technologies like React, TailwindCSS, and Google Maps API. It’s designed to be scalable, clean, and practical.
         </p>

@@ -26,6 +26,7 @@ const Contact = () => {
         Have questions, suggestions, or need help? Fill out the form below and
         we'll get back to you shortly.
       </p>
+      
       <form onSubmit={handleSubmit} className="space-y-6">
         <div>
           <label
