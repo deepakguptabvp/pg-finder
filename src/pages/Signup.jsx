@@ -1,5 +1,5 @@
-"use client";
-import { Link } from "lucide-react";
+"use client"
+
 import { useState } from "react";
 import toast from "react-hot-toast";
 
