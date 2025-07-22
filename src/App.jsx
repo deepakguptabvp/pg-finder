@@ -1,7 +1,6 @@
 import { Route, BrowserRouter as Router, Routes } from "react-router";
 import MainLayout from "./layout/MainLayout";
 import "./App.css";
-import { useState } from "react";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import NotFound from "./pages/NotFound";
