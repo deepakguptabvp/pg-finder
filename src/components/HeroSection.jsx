@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 const HeroSection = ({ onSearch }) => {
   const [inputValue, setInputValue] = useState("");
 
-    //  Run on every change in input
+  //  Run on every change in input
   useEffect(() => {
     if (inputValue.trim() === "") {
       onSearch(""); // reset search if input is empty
@@ -31,13 +31,13 @@ const HeroSection = ({ onSearch }) => {
   return (
     <div className="relative bg-indigo-700 text-white">
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-indigo-800 via-indigo-500 to-indigo-600 opacity-90"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-indigo-800 via-indigo-700 to-indigo-700 opacity-90"></div>
       </div>
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
         <h1 className="text-4xl md:text-5xl font-extrabold text-center">
           Find Your Perfect PG Accommodation
         </h1>
-        <p className="mt-6 text-md text-center max-w-3xl mx-auto">
+        <p className="mt-6 text-md text-center max-w-xl mx-auto">
           Discover comfortable and affordable PG accommodations across the city.
           Your new home is just a search away.
         </p>

@@ -60,7 +60,7 @@ const Header = () => {
                 onClick={() => isMenuOpen && toggleMobileMenu()}
                 className="text-gray-700  hover:underline px-3 py-2"
               >
-                Explore
+                Listings
               </Link>
               <Link
                 to="/about"
