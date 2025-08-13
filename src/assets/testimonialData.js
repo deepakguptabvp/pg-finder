@@ -48,3 +48,5 @@ const testimonials = [
     avatar: 'https://randomuser.me/api/portraits/men/85.jpg',
   },
 ];
+
+export default testimonials;
