@@ -6,9 +6,9 @@ const pgData = [
     price: 25000,
     rating: 4.5,
     imageUrl:
-      "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=2070&q=80",
+      "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=400&q=70",
     type: "Female",
-    amenities: ["Wifi", "Furnished", "AC","Attached Bathroom"],
+    amenities: ["Wifi", "Furnished", "AC", "Attached Bathroom"],
   },
   {
     id: "2",
@@ -17,7 +17,7 @@ const pgData = [
     price: 27000,
     rating: 4.2,
     imageUrl:
-      "https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&fit=crop&w=2070&q=80",
+      "https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&fit=crop&w=400&q=70",
     type: "Male",
     amenities: ["Wifi", "Food Included", "AC", "Power Backup", "Television"],
   },
@@ -28,7 +28,7 @@ const pgData = [
     price: 35000,
     rating: 4.7,
     imageUrl:
-      "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=2070&q=80",
+      "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=400&q=70",
     type: "Co-ed",
     amenities: ["AC", "Furnished", "Gym", "Power Backup", "Parking"],
   },
@@ -39,9 +39,9 @@ const pgData = [
     price: 20500,
     rating: 4.0,
     imageUrl:
-      "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=2070&q=80",
+      "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=400&q=70",
     type: "Female",
-    amenities: ["Laundry", "Wifi", "Food Included","Private Room", "Furnished"],
+    amenities: ["Laundry", "Wifi", "Food Included", "Private Room", "Furnished"],
   },
   {
     id: "5",
@@ -71,7 +71,7 @@ const pgData = [
     price: 13000,
     rating: 4.4,
     imageUrl:
-      "https://asset-cdn.stanzaliving.com/stanza-living/image/upload/f_auto,q_auto,w_600/e_improve/e_sharpen:10/e_saturation:10/v1580289732/Website/CMS-Uploads/j8hjb1qhzcbnsmnude3m.jpg",
+      "https://asset-cdn.stanzaliving.com/stanza-living/image/upload/f_auto,q_70,w_400/e_improve/e_sharpen:10/e_saturation:10/v1580289732/Website/CMS-Uploads/j8hjb1qhzcbnsmnude3m.jpg",
     type: "Co-ed",
     amenities: ["Furnished", "Attached Bathroom", "Power Backup", "Gym"],
   },
@@ -82,7 +82,7 @@ const pgData = [
     price: 11000,
     rating: 4.1,
     imageUrl:
-      "https://asset-cdn.stanzaliving.com/stanza-living/image/upload/v1580375346/Website/CMS-Uploads/o4bf5h8z6cxtgnb6hvxj.jpg",
+      "https://asset-cdn.stanzaliving.com/stanza-living/image/upload/f_auto,q_70,w_400/v1580375346/Website/CMS-Uploads/o4bf5h8z6cxtgnb6hvxj.jpg",
     type: "Male",
     amenities: ["Wifi", "AC", "Laundry", "Food Included"],
   },
@@ -93,7 +93,7 @@ const pgData = [
     price: 9000,
     rating: 4.0,
     imageUrl:
-      "https://img.cofynd.com/images/original/938b5bac0b64a441513fd9038753a26059ff0fce.jpg",
+      "https://img.cofynd.com/images/original/938b5bac0b64a441513fd9038753a26059ff0fce.jpg?w=400&q=70",
     type: "Co-ed",
     amenities: ["Attached Bathroom", "Gym", "Power Backup"],
   },
@@ -104,7 +104,7 @@ const pgData = [
     price: 16000,
     rating: 4.5,
     imageUrl:
-      "https://img.cofynd.com/images/latest_images_2024/39257be6bf339917f449ee7d18bb9862b5750675.webp",
+      "https://img.cofynd.com/images/latest_images_2024/39257be6bf339917f449ee7d18bb9862b5750675.webp?w=400&q=70",
     type: "Female",
     amenities: ["Wifi", "AC", "Furnished", "Gym", "Laundry"],
   },
