@@ -29,6 +29,7 @@ const Header = () => {
           {/* Toggle Button for Mobile */}
           <div className="md:hidden">
             <button
+              title="Explore"
               onClick={toggleMobileMenu}
               className="text-gray-700 hover:bg-gray-200 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
             >

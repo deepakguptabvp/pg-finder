@@ -26,24 +26,28 @@ const Footer = () => {
             <div className="mt-6 flex space-x-4">
               <Link
                 href="#"
+                title="Facebook"
                 className="text-gray-400 hover:text-white  transition cursor-pointer  hover:underline"
               >
                 <FacebookIcon className="h-5 w-5" />
               </Link>
               <Link
                 href="#"
+                title="Twitter"
                 className="text-gray-400 hover:text-white  transition cursor-pointer  hover:underline"
               >
                 <TwitterIcon className="h-5 w-5" />
               </Link>
               <Link
                 href="#"
+                title="Instagram"
                 className="text-gray-400 hover:text-white  transition cursor-pointer  hover:underline"
               >
                 <InstagramIcon className="h-5 w-5" />
               </Link>
               <Link
                 href="#"
+                title="Linkedin"
                 className="text-gray-400 hover:text-white  transition cursor-pointer  hover:underline"
               >
                 <LinkedinIcon className="h-5 w-5" />
